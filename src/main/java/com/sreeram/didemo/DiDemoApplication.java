@@ -9,9 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
+//@ComponentScan(basePackages = {"services","com.sreeram"})
 public class DiDemoApplication {
 
     public static void main(String[] args) {
+
+//        SpringApplication.run(DiDemoApplication.class,args);
+
         ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
 
         HomeController controller =  (HomeController) ctx.getBean("homeController");
