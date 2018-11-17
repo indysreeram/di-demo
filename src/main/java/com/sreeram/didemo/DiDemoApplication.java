@@ -4,6 +4,8 @@ import com.sreeram.didemo.Controllers.ConstructorInjectedController;
 import com.sreeram.didemo.Controllers.GetterInjectedController;
 import com.sreeram.didemo.Controllers.HomeController;
 import com.sreeram.didemo.Controllers.PropertyInjectedController;
+import com.sreeram.didemo.examplebeans.FakeDataSource;
+import com.sreeram.didemo.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -17,6 +19,14 @@ public class DiDemoApplication {
 //        SpringApplication.run(DiDemoApplication.class,args);
 
         ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
+
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+        System.out.println(fakeDataSource.getUser());
+
+        FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+
+        System.out.println(fakeJmsBroker.getUsername());
 
         HomeController controller =  (HomeController) ctx.getBean("homeController");
         System.out.println(controller.hello());
