@@ -1,0 +1,14 @@
+
+sreeram:
+  jms:
+    username: jms-int-admin
+    password: jms-int-pass
+    url: jmsUrl
+
+---
+spring:
+  profiles: de
+sreeram:
+  jms:
+    username: jms-int-admin-german
+
